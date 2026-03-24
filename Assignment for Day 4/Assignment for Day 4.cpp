@@ -2,6 +2,7 @@
 #include <conio.h> // Windows에서 키 입력(getch)을 받기 위해 필요하다고 함
 #include <windows.h> // Sleep 함수를 위해 필요하다고 함
 
+//branch 병합을 위한 추가 주석
 //branch 테스트를 위한 추가 주석
 //Void 사용 및 문구 출력기능 사용
 void IntroMessage()
