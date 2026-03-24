@@ -2,7 +2,7 @@
 #include <conio.h> // Windows에서 키 입력(getch)을 받기 위해 필요하다고 함
 #include <windows.h> // Sleep 함수를 위해 필요하다고 함
 
-
+//branch 테스트를 위한 추가 주석
 //Void 사용 및 문구 출력기능 사용
 void IntroMessage()
 {
@@ -65,27 +65,27 @@ void DrawingMap()
         for (int X = 0; X < MAP_SIZE; X++)
         {
             if (X == PlayerX && Y == PlayerY) std::cout << "@";
-          
-            else if(X == EnemyX && Y == EnemyY && EnemyHP > 0) std::cout << "Z";
-           
+
+            else if (X == EnemyX && Y == EnemyY && EnemyHP > 0) std::cout << "Z";
+
             else std::cout << ".";
-                
-            
+
+
         }
 
-        if (Y == 1) std::cout << "\t [ PLAYER HP : " << PlayerHP << " ATK : " << PlayerATK<< " DEF : " << PlayerDEF << "]";
+        if (Y == 1) std::cout << "\t [ PLAYER HP : " << PlayerHP << " ATK : " << PlayerATK << " DEF : " << PlayerDEF << "]";
         if (Y == 2) std::cout << "\t [ ENEMY  HP : " << EnemyHP << " ATK : " << EnemyATK << " DEF : " << EnemyDEF << "]";
         if (Y == 3 && EnemyHP <= 0) std::cout << "\t  (적 처치 완료!)";
         if (Y == 7) std::cout << "\t 이동은 (W, A, S, D), 플레이어는 @, 적은 Z";
         std::cout << "\n";
     }
-    
+
 }
 
 //키 입력받기
 char InputMoveKey()
 {
-   return _getch();
+    return _getch();
 }
 
 //키 입력에 따라 플레이어 좌표 수정
@@ -110,7 +110,7 @@ void Moveplayer(char input)
 
             EnemyHP = EnemyHP - PlayerDamage(PlayerATK, EnemyDEF);
             PlayerHP = PlayerHP - EnemyDamage(EnemyATK, PlayerDEF);
- 
+
         }
         else if (EnemyHP == 0)
         {
@@ -147,7 +147,7 @@ void DrawConsistMap()
 
 int main()
 {
-    
+
     IntroMessage();
     DrawConsistMap();
 
